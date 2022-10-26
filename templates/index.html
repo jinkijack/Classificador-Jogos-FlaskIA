@@ -19,7 +19,7 @@ height: 100vh">
     <h1 class="text-center p-2 mb-5 text-withe fw-bold shadow-lg p-3 mb-5">Classificador de venda de jogos</h1>
 
     <form action="{{ url_for('predict')}}" method="post" name="form">
-
+      <p class="text-white">Selecione o Gênero do jogo</p>
       <select class="form-select" aria-label="Default select example" type="text" name="genre">
         <option value = "">-</option>
         <option value="0">Ação</option>
@@ -35,7 +35,7 @@ height: 100vh">
         <option value="10">Esportes</option>
         <option value="11">Estratégia</option>
         </select> 
-
+        <p class="text-white">Selecione a Plataforma do jogo</p>
       <select class = "form-select" aria-label="Default select example" type="text" name="plataform">
         <option value="">-</option> 
         <option value="0">2600</option>
@@ -70,8 +70,9 @@ height: 100vh">
         <option value="29">XB</option>
         <option value="30">XOne</option>
         </select>
-
+        <br>
       <input class="fw-bold bg-white text-center text-dark" type="text" name="na" placeholder="Vendas na América do Norte (em milhões)" required="required" />
+      <br>
       <input class="fw-bold bg-white text-center text-dark" type="text" name="eu" placeholder="Vendas na Europa (em milhões)" required="required" />
 
       <button type="submit" class=" text-center mx-auto d-block btn btn-primary btn-block btn-large fs-6 fw-bold p-3">Classificar a venda de jogos</button>
