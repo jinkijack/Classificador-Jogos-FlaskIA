@@ -21,9 +21,9 @@ height: 100vh">
     <form action="{{ url_for('predict')}}" method="post" name="form">
 
       <label class="text-white">Vendas no continente Norte Americano: </label>
-      <input class="fw-bold bg-white text-center text-dark" type="text" name="na" placeholder="Vendas na América do Norte (em milhões)" required="required" />
+      <input class="fw-bold bg-white text-center text-dark" type="text" name="na" required="required" />
       <label class="text-white">Vendas no continente Europeu: </label>
-      <input class="fw-bold bg-white text-center text-dark" type="text" name="eu" placeholder="Vendas na Europa (em milhões)" required="required" />
+      <input class="fw-bold bg-white text-center text-dark" type="text" name="eu" required="required" />
 
       <label class="text-white">Selecione a Plataforma do jogo</label>
       <select class = "form-select" aria-label="Default select example" type="text" name="plataform">
@@ -77,7 +77,7 @@ height: 100vh">
           <option value="10">Esportes</option>
           <option value="11">Estratégia</option>
           </select> 
-
+          <br>
       <button type="submit" class=" text-center mx-auto d-block btn btn-primary btn-block btn-large fs-6 fw-bold p-3">Classificar a venda de jogos</button>
 
     </form>
