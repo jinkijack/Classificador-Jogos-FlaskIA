@@ -1,38 +1,93 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
   <meta charset="UTF-8">
-  <title>Deployment Tutorial 1</title>
+  <title>Classificador de jogos</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
-  
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
 </head>
 
-<body style="background: #000;">
+<body style="background-image: url('https://i.pinimg.com/564x/6b/98/e6/6b98e6dfa2da196c515ddd79df5480ca.jpg');
+height: 100vh">
   <div class="login">
-    <h1>Classificador de espécies IRIS</h1>
-    <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}" method="post">
-    <input type="text" name="sl" placeholder="Sepal length (cm)" requi
-    red="required" />
-    <input type="text" name="sw" placeholder="Sepal width (cm)" requir
-    ed="required" />
-    <input type="text" name="pl" placeholder="Petal length (cm)" requi
-    red="required" />
-    <input type="text" name="pw" placeholder="Petal length (cm)" requi
-    red="required" />
-    
-    <button type="submit" class="btn btn-primary btn-block btn-
-    large">Classificar IRIS</button>
-    
+    <h1 class="text-center p-2 mb-5 text-withe fw-bold shadow-lg p-3 mb-5">Classificador de venda de jogos</h1>
+
+    <form action="{{ url_for('predict')}}" method="post" name="form">
+
+      <select class="form-select" aria-label="Default select example" type="text" name="genre">
+        <option value = "">-</option>
+        <option value="0">Ação</option>
+        <option value="1">Aventura</option>
+        <option value="2">Luta</option>
+        <option value="3">Diversos</option>
+        <option value="4">Plataforma</option>
+        <option value="5">Puzzle</option>
+        <option value="6">Corrida</option>
+        <option value="7">RPG</option>
+        <option value="8">Tiro</option>
+        <option value="9">Simulação</option>
+        <option value="10">Esportes</option>
+        <option value="11">Estratégia</option>
+        </select> 
+
+      <select class = "form-select" aria-label="Default select example" type="text" name="plataform">
+        <option value="">-</option> 
+        <option value="0">2600</option>
+        <option value="1">3DO</option>
+        <option value="2">3DS</option>
+        <option value="3">DC</option>
+        <option value="4">DS</option>
+        <option value="5">GB</option>
+        <option value="6">GBA</option>
+        <option value="7">GC</option>
+        <option value="8">GEN</option>
+        <option value="9">GG</option>
+        <option value="10">N64</option>
+        <option value="11">NES</option>
+        <option value="12">NG</option>
+        <option value="13">PC</option>
+        <option value="14">PCFX</option>
+        <option value="15">PS</option>
+        <option value="16">PS2</option>
+        <option value="17">PS3</option>
+        <option value="18">PS4</option>
+        <option value="19">PSP</option>
+        <option value="20">PSV</option>
+        <option value="21">SAT</option>
+        <option value="22">SCD</option>
+        <option value="23">SNES</option>
+        <option value="24">TG16</option>
+        <option value="25">WS</option>
+        <option value="26">Wii</option>
+        <option value="27">WiiU</option>
+        <option value="28">X360</option>
+        <option value="29">XB</option>
+        <option value="30">XOne</option>
+        </select>
+
+      <input class="fw-bold bg-white text-center text-dark" type="text" name="na" placeholder="Vendas na América do Norte (em milhões)" required="required" />
+      <input class="fw-bold bg-white text-center text-dark" type="text" name="eu" placeholder="Vendas na Europa (em milhões)" required="required" />
+
+      <button type="submit" class=" text-center mx-auto d-block btn btn-primary btn-block btn-large fs-6 fw-bold p-3">Classificar a venda de jogos</button>
+
     </form>
     <br>
-    <br>
-    {{ prediction_text }}
+    <h3 class="text-bg-dark p-3"> {{ prediction_text }} </h3>
     </div>
+    
+    <br>
+    <br>
+    
+  </div> 
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384- OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  
 </body>
 
 </html>
