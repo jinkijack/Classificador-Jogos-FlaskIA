@@ -19,3 +19,18 @@ O modelo foi exportado utilizando o [pickle](https://docs.python.org/3/library/p
 
 ## API
 Também é possivel utilizar o modelo como uma API, enviando um JSON para o link com /api https://flask-ia-si.herokuapp.com/api utilizando o metodo POST com as informações que o modelo necessita e será retornado um JSON com a predição. 
+
+## Executar localmente
+Para executar localmente em sua máquina primeiro é necessário instalar as dependências, abrindo seu terminal direto na pasta onde o projeto foi clonado de o comando:
+```
+pip install -r requirements.txt
+```
+Para inicializar o flask de o comando:
+```
+flask run
+```
+A aplicação será iniciada no `localhost`, se a porta não for especificada ele abrira na porta padrão `5000`.
+
+### Esse Projeto foi desenvolvido na disciplina de Inteligência Artificial do curso de Sistemas de Informação, seu conteúdo é Open Source e pode ser utilizado e modificado por todos.
+
+![This is an image](https://myoctocat.com/assets/images/base-octocat.svg)
